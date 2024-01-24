@@ -40,7 +40,7 @@ start_app <- function(theme = getOption("cli.theme"),
   cliappenv$stack[[length(cliappenv$stack) + 1]] <- app
 
   if (.auto_close && !identical(.envir, globalenv())) {
-    defer(stop_app(app = app), envir = .envir, priority = "first")
+    defer(stop_app(app = app), envir = .envir)
   }
 
   invisible(app)
